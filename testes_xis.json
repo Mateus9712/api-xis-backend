@@ -1,0 +1,315 @@
+{
+  "info": {
+    "_postman_id": "1a427d10-cada-4833-a895-51faa103d891",
+    "name": "Xis do Mateus",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53005330",
+    "_collection_link": "https://go.postman.co/collection/53005330-1a427d10-cada-4833-a895-51faa103d891?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "T01 - Login Sucesso",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"mateus@xis.com\",\r\n  \"senha\": \"senha_super_secreta\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/auth/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "T02 - Cadastrar Xis",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Xis Coração\",\r\n  \"descricao\": \"Pão, maionese, coração, queijo e ovo\",\r\n  \"preco\": 28.50\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/produtos",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "T03 - Ver Cardápio",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/produtos",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "T04 - Realizar Pedido APP",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"canalPedido\": \"APP\",\r\n  \"itens\": [{\"produto_id\": 1, \"quantidade\": 2}]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/pedidos",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "pedidos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "T05 - Simular Pagamento Sucesso",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"forma_pagamento\": \"PIX\", \"sucesso\": true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/pedidos/1/pagar",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "pedidos",
+            "1",
+            "pagar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "T06 - Filtrar Pedidos por Canal",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/pedidos?canalPedido=APP",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "pedidos"
+          ],
+          "query": [
+            {
+              "key": "canalPedido",
+              "value": "APP"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "T07 - Login Senha Errada",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"mateus@xis.com\", \"senha\": \"errada\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/auth/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "T08 - Pedido Canal Inválido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"canalPedido\": \"TELEFONE\", \"itens\": []}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/pedidos",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "pedidos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "T09 - Pagar Pedido Inexistente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"forma_pagamento\": \"CARTAO\", \"sucesso\": true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/pedidos/999/pagar",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "pedidos",
+            "999",
+            "pagar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "T10 - Cadastro Produto Sem Preço",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nome\": \"Xis Vazio\", \"descricao\": \"Sem preço\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/produtos",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
