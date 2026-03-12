@@ -8,7 +8,7 @@ import schemas
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="API Xis do Mateus", version="1.0.0")
+app = FastAPI(title="Raízes do Nordeste", version="1.0.0")
 
 
 def get_db():
@@ -82,7 +82,6 @@ def login(credenciais: schemas.UsuarioLogin, db: Session = Depends(get_db)):
 
     token_jwt = jwt.encode(dados_token, SECRET_KEY, algorithm=ALGORITHM)
 
-    # Devolve o token no formato que o professor pediu no Roteiro
     return {"access_token": token_jwt, "token_type": "Bearer"}
 # --- ROTAS DE PRODUTO ---
 @app.post("/produtos", response_model=schemas.Produto, tags=["Produtos"])
