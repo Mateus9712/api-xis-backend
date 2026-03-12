@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "1a427d10-cada-4833-a895-51faa103d891",
-    "name": "Xis do Mateus",
+    "name": "Raízes do Nordeste",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "53005330",
     "_collection_link": "https://go.postman.co/collection/53005330-1a427d10-cada-4833-a895-51faa103d891?source=collection_link"
@@ -14,7 +14,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"email\": \"mateus@xis.com\",\r\n  \"senha\": \"senha_super_secreta\"\r\n}",
+          "raw": "{\r\n  \"email\": \"Raizesdo@Nordeste.com\",\r\n  \"senha\": \"senha_super_secreta\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -191,7 +191,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\"email\": \"mateus@xis.com\", \"senha\": \"errada\"}",
+          "raw": "{\"email\": \"Raizesdo@Nordeste.com\", \"senha\": \"errada\"}",
           "options": {
             "raw": {
               "language": "json"
