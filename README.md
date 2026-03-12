@@ -1,4 +1,4 @@
-# 🍔 API Xis do Mateus
+# 🍔 API Raízes do Nordeste
 
 Projeto de Back-end para a rede de lanchonetes gaúcha, focado em multicanalidade e segurança.
 
